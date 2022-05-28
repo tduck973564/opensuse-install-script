@@ -1,13 +1,13 @@
 #!/usr/bin/sh
 
-# Fedora Install Script by tduck973564
+# OpenSUSE Install Script by tduck973564
 # Makes life a little bit easier
 
 echo CD into home directory
 cd ~
 
 echo Adding Flathub to Flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo Installation of Packman
 sudo zypper ar -cfp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
@@ -93,7 +93,7 @@ echo Set VSCode settings
 
 echo Installation of miscellaneous useful apps
 sudo dnf install -y discord ffmpeg pavucontrol easyeffects gnome-tweaks
-flatpak install -y com.github.tchx84.Flatseal org.gnome.Extensions
+sudo flatpak install -y com.github.tchx84.Flatseal org.gnome.Extensions
 
 echo Log into accounts on web browser
 firefox https://accounts.google.com/
@@ -122,13 +122,14 @@ git clone https://github.com/tduck973564/dotfiles ~/.dotfiles
 echo ". ~/.dotfiles/.aliases" >> ~/.zshrc
 
 echo "Fix inconsistent GNOME 42 theming; you will need to enable the theme in tweaks"
+sudo zypper in sassc
 cd ~/Repositories
 git clone https://github.com/lassekongo83/adw-gtk3
 cd adw-gtk3
 meson build
 sudo ninja -C build install
 cd ~
-flatpak install -y org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+sudo flatpak install -y org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 
 echo Install firefox theme
 cd ~/Repositories
