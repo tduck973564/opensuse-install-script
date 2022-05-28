@@ -56,8 +56,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 echo Installation of TypeScript and JavaScript
 sudo zypper in nodejs16
-sudo npm install -g typescript
-sudo npm install -g npm
+sudo npm install -g typescript npm
 
 echo Installation of Java
 sudo zypper in java-17-openjdk java-17-openjdk-devel
