@@ -92,7 +92,7 @@ code --install-extension llvm-vs-code-extensions.vscode-clangd
 echo Set VSCode settings
 
 echo Installation of miscellaneous useful apps
-sudo dnf install -y discord ffmpeg pavucontrol easyeffects gnome-tweaks
+sudo dnf install -y discord ffmpeg pavucontrol easyeffects gnome-tweaks rhythmbox
 sudo flatpak install -y com.github.tchx84.Flatseal org.gnome.Extensions
 
 echo Log into accounts on web browser
@@ -114,7 +114,6 @@ systemctl --user start onedrive
 
 echo Download icon theme and fonts
 sudo zypper addrepo https://ftp.lysator.liu.se/pub/opensuse/repositories/M17N:/fonts/openSUSE_Tumbleweed/ fonts-x86_64
-
 sudo zypper in papirus-icon-theme fira-code-fonts ibm-plex-sans-fonts ibm-plex-mono-fonts ibm-plex-serif-fonts inter-fonts materia-gtk-theme
 
 echo Dotfiles
