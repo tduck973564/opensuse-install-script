@@ -137,4 +137,7 @@ cd firefox-gnome-theme
 ./scripts/auto-install.sh
 cd ~
 
+echo Remove some crapware 
+sudo zypper rm gnome-music gnome-screenshot pidgin git-gui 
+
 echo -e '\nDone!'
